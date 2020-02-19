@@ -1,12 +1,13 @@
-package com.example.demo.entity;
+package com.example.aula1.entity;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class UsuarioEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,16 +17,17 @@ public class User {
 
     private String senha;
 
-    public User() {
+    public UsuarioEntity() {
+        super();
     }
-
-    public User(String nome, String senha) {
+    
+    public UsuarioEntity(String nome, String senha) {
         this();
+        
         this.nome = nome;
         this.senha = senha;
     }
 
-    
     public Long getId() {
         return id;
     }
