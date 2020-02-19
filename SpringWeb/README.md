@@ -1,6 +1,6 @@
 # Spring Web
 
-Este projeto visa o ensino da linguagem Java com foco na integração da parte visual (Font-end) com o banco de dados (Back-end) com o uso das componentes do [Spring](https://spring.io/).
+Este projeto visa o ensino da linguagem Java com foco na integração da parte visual (Front-end) com o banco de dados (Back-end) com o uso das componentes do [Spring](https://spring.io/).
 
 ## Ferramentas
 
