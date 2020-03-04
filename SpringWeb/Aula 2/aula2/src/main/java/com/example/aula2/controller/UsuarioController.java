@@ -1,7 +1,7 @@
-package com.example.aula1.controller;
+package com.example.aula2.controller;
 
-import com.example.aula1.entity.UsuarioEntity;
-import com.example.aula1.repository.UsuarioRepository;
+import com.example.aula2.entity.UsuarioEntity;
+import com.example.aula2.repository.UsuarioRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;

@@ -1,4 +1,4 @@
-package com.example.aula1.entity;
+package com.example.aula2.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;

@@ -22,7 +22,7 @@ Utilizar o Open JDK ao menos na versão 8: [Baixe uma versão aqui](https://adop
 
 ### Cliente REST
 
-* [Imnsonia](https://insomnia.rest/): Recomendado por ser *Open Source*.
+* [Insomnia](https://insomnia.rest/): Recomendado por ser *Open Source*.
 * [Postman](https://www.postman.com)
 
 ### Banco de dados
@@ -33,5 +33,5 @@ Não é preciso baixar porque já fará parte do pacote. Para mais informações
 
 Em desenvolvimento...
 
-* [Aula 1](./Aula%201/README.md): projeto básico em Spring Boot
-* [Aula 2](Aula%202): conceitos da arquitetura de microsserviços
+* [Aula 1](Aula%201): projeto básico em Spring Boot.
+* [Aula 2](Aula%202): conceitos da arquitetura de microsserviços.

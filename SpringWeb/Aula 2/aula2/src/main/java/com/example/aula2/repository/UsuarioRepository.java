@@ -1,6 +1,6 @@
-package com.example.aula1.repository;
+package com.example.aula2.repository;
 
-import com.example.aula1.entity.UsuarioEntity;
+import com.example.aula2.entity.UsuarioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long>{
