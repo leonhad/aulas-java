@@ -1,13 +1,13 @@
-package com.example.aula2;
+package com.example.aula3;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Aula2Application {
+public class Aula3Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Aula2Application.class, args);
+        SpringApplication.run(Aula3Application.class, args);
     }
 
 }

@@ -1,7 +1,7 @@
-package com.example.aula2.config;
+package com.example.aula3.config;
 
-import com.example.aula2.entity.UsuarioEntity;
-import com.example.aula2.repository.UsuarioRepository;
+import com.example.aula3.entity.UsuarioEntity;
+import com.example.aula3.repository.UsuarioRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;

@@ -1,7 +1,7 @@
-package com.example.aula2.controller;
+package com.example.aula3.controller;
 
-import com.example.aula2.entity.CarrinhoEntity;
-import com.example.aula2.repository.CarrinhoRepository;
+import com.example.aula3.entity.UsuarioEntity;
+import com.example.aula3.repository.UsuarioRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,34 +14,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/carrinhos")
-public class CarrinhoController {
-
+@RequestMapping("/usuarios")
+public class UsuarioController {
+    
     @Autowired
-    private CarrinhoRepository carrinhoRepository;
-
+    private UsuarioRepository usuarioRepository;
+    
     @GetMapping
-    public List<CarrinhoEntity> listAll() {
-        return carrinhoRepository.findAll();
+    public List<UsuarioEntity> listAll() {
+        return usuarioRepository.findAll();
     }
     
     @PostMapping
-    public CarrinhoEntity create(@RequestBody CarrinhoEntity produto) {
-        return carrinhoRepository.save(produto);
+    public UsuarioEntity create(@RequestBody UsuarioEntity usuario) {
+        return usuarioRepository.save(usuario);
     }
-
+    
     @GetMapping(path = "/{id}")
-    public CarrinhoEntity get(@PathVariable Long id) {
-        return carrinhoRepository.getOne(id);
+    public UsuarioEntity get(@PathVariable Long id) {
+        return usuarioRepository.getOne(id);
     }
-
+    
     @PutMapping
-    public CarrinhoEntity update(@RequestBody CarrinhoEntity produto) {
-        return carrinhoRepository.save(produto);
+    public UsuarioEntity update(@RequestBody UsuarioEntity usuario) {
+        return usuarioRepository.save(usuario);
     }
-
+    
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
-        carrinhoRepository.deleteById(id);
+        usuarioRepository.deleteById(id);
     }
 }
