@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Título da página</title>
+        <style type="text/css">
+            /* genérico */
+            .aline {
+                background-color: blue;
+                color: white;
+            }
+            /* ID */
+            #segundo {
+                background-color: gray;
+                color: white;
+            }
+            /* TAG */
+            div {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: bold;
+            }
+
+            div a, div.aline {
+                color: red
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            alert("antes da página abrir");
+        </script>
+        <p>
+            Corpo.
+            <br/>
+            <b>Negrito</b>
+            <i>Itálico</i>
+        </p>
+        <p>
+            Segundo parágrafo.
+        </p>
+        <img src="a.jpg" width="50" height="50"
+        alt="O aeronauta" title="Imagem descolada"/>
+        <div>Texto dentro da div</div>
+        <div>Texto dentro da div 2</div>
+        <div class="aline">Texto dentro do span</div>
+        <span id="segundo">Texto dentro do span 2</span>
+
+        <a href="#">Link fora do div</a> 
+        <div>
+            DIV com link: <a href="#">Link</a>
+        </div>
+
+        <form action="segunda.html" method="POST">
+            <input type="hidden" name="campo" id="campo"/>
+
+            <p>Nome: <input type="text" size="40"
+                maxlength="5"/></p>
+            <p>Data de Nascimento: 
+                <input type="date"/>
+            </p>
+            <p>Senha:
+                <input type="password"/>
+            </p>
+            Sexo: <br/>
+            <input type="radio" name="sexo" value="M" checked>
+             Masculino<br/>
+            <input type="radio" name="sexo" value="F">
+             Feminino<br/>
+            <input type="button" value="Cancelar"/>
+            <button type="button" onclick="mensagem()">
+                <img src="Ok.png"/>
+                <b>Ok</b>
+            </button>
+        </form>
+        <script type="text/javascript">
+            function mensagem() {
+                var a = 1;
+                if (a == 1) {
+                    alert('Teste de mensagem');
+                }
+            }
+        </script>
+    </body>
+</html>
