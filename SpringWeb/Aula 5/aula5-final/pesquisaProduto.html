@@ -1,7 +1,7 @@
 <!--?xml version="1.0" encoding="UTF-8"?-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR"><head id="j_idt2">
-    <title>Requisição de Demandas - Protótipo</title>
+    <title>Controle de Estoque</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,8 +27,7 @@
     <script type="text/javascript" src="arquivos/bootstrap-datetimepicker.js"></script>
 </head>
 <body>
-<form id="menu" name="menu" method="post">
-        <input type="hidden" name="menu" value="menu">
+    <form id="menu" name="menu" method="post">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                     <div class="navbar-header">
@@ -42,19 +41,28 @@
                             <img src="arquivos/logob.png" alt="Logo Faciplac" width="40" height="40">
                         </a>
                         <a href="#" class="navbar-brand">
-                            Requisição de Demandas
+                            Controle de Estoque
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbar1">
                         <ul class="nav navbar-nav">
                             <li role="presentation" class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    Demandas <em class="caret"></em>
+                                    Cadastro <em class="caret"></em>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="solicitacao.html" >Solicitar demanda</a>
-                                    </li>
                                     <li><a href="pesquisa.html">Pesquisar</a>
+                                    </li>
+                                    <li><a href="cadastroProduto.html" >Cadastrar Produto</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li role="presentation" class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    Relatórios <em class="caret"></em>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" >Relatório 1</a>
                                     </li>
                                 </ul>
                             </li>
@@ -87,74 +95,71 @@
             </div>
         </nav>
 </form>
-    <form method="post" class="form-horizontal">
-        <div class="container">
-            <ol class="breadcrumb">
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Demandas</a></li>
-                    <li class="active">Solicitar</li>
-            </ol><div id="mensagem"></div>
-            <div class="page-header">
-                <h1>Solicitar demanda</h1>
-            </div>
-            <div class="form-group">
-                <label for="projeto" class="control-label col-sm-2">Projeto:</label>
-                <div class="col-sm-10">
-                    <input type="text" name="projeto" class="form-control">
+<form method="post" class="form-horizontal">
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="cadastroProduto.html">Cadastro</a></li>
+                    <li class="active">Pesquisar</li>
+                </ol><div id="mensagem"></div>
+                <div class="page-header">
+                    <h1>Pesquisa de Produtos</h1>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="objetivo" class="control-label col-sm-2">Objetivo:</label>
-                <div class="col-sm-10">
-                    <textarea name="objetivo" class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="idCurso" class="control-label col-sm-2">Curso:</label>
-                <div class="col-sm-10">
-                    <select id="idCurso" name="idCurso" class="form-control" size="1">
-                        <option value="" selected="selected">Selecione...</option>
-                        <option value="0">Enfermagem</option>
-                        <option value="0">Engenharia de Software</option>
-                        <option value="1">Sistemas de Informação</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="descricao" class="control-label col-sm-2">Descrição:</label>
-                <div class="col-sm-10">
-                    <textarea name="descricao" class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="prazo" class="control-label col-sm-2">Prazo estimado:</label>
-                <div class="col-sm-4">
-                    <input type="text" placeholder="dd/mm/yyyy" name="prazo" class="form-control"/>
-                </div>
-                <label for="aprovado" class="control-label col-sm-2">Aprovado:</label>
-                <div class="col-sm-4">
-                    <input type="text" name="aprovado" class="form-control" readonly value="Em análise"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="justificativa" class="control-label col-sm-2">Justificativa:</label>
-                <div class="col-sm-10">
-                    <textarea name="justificativa" class="form-control"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                    <label for="participantes" class="control-label col-sm-2">Participantes:</label>
+                <div class="form-group">
+                    <label for="nome" class="class-label col-sm-2">Nome:</label>
                     <div class="col-sm-10">
-                        <textarea name="participantes" class="form-control"></textarea>
+                        <input type="text" name="nome"class="form-control"/>
                     </div>
                 </div>
-            <div class="form-group">
-                <div class="control-label col-sm-2"></div>
-                <div class="col-sm-10">
-                    <input type="submit" value="Solicitar" class="btn">
+                <div class="form-group">
+                    <label for="categoria" class="control-label col-sm-2">Categoria:</label>
+                    <div class="col-sm-10">
+                        <select id="categoria" name="categoria" class="form-control">
+                            <option value="" selected="selected">Selecione...</option>
+                            <option value="0">Ficção</option>
+                            <option value="1">Romance</option>
+                            <option value="2">Técnico</option>
+                        </select>
+                    </div>
                 </div>
+                <div class="form-group">
+                    <div class="control-label col-sm-2"></div>
+                    <div class="col-sm-10"><input type="submit" value="Pesquisar" class="btn">
+                    </div>
+                </div><span id="resultado">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">Resultado da consulta</div>
+                            <div class="table-responsive">
+                                <table class="table">
+<thead>
+<tr>
+<th scope="col">Nome</th>
+<th scope="col">Categoria</th>
+<th class="text-center" scope="col">Valor</th>
+<th class="width120" scope="col">Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Potes da tia</td>
+<td>Culinária</td>
+<td class="text-center">R$ 1,99</td>
+<td class="text-center">
+                                        <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                            <a href="cadastroProduto.html" title="Editar" class="btn btn-default">
+                                                <em class="glyphicon glyphicon-pencil"></em>
+                                            </a>
+                                            <a href="#" title="Excluir" onclick="return confirm('Confirma a exclusão?')" class="btn btn-default">
+                                                <em class="glyphicon glyphicon-trash"></em>
+                                            </a>
+                                        </div>
+                                    </td>
+</tr>
+</tbody>
+</table>
+
+                            </div>
+                    </div></span>
             </div>
-        </div>
-    </form>
-</body>
-</html>
+</form>
+</body></html>
