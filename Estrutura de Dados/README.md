@@ -1,21 +1,27 @@
-# Aula 1
+# Estrutura de dados
 
-## Projeto de Serviços
+Este projeto visa o ensino das Estruturas de Dados usando a linguagem Java.
 
-Entrar no site do [Spring Initializr](https://start.spring.io/) e gerar um novo projeto com as seguintes informações:
+## Ferramentas
 
-* **Project:** Maven
-* **Language:** Java
-* **Spring Boot:** 2.2.4
-* **Project Metadata:**
-  * **Group:** com.example
-  * **Artifact:** aula1
-* **Dependencies:**
-  * Spring Web.
-  * Spring Data JPA.
-  * H2 Database.
+Para o desenvolvimento, são recomendadas uma das ferramentas abaixo para cada tipo de tecnologia:
 
-## Diretórios
+### Java
 
-* **aula1:** projeto gerado no Spring Initializr sem alterações.
-* **aula1-final:** projeto após a aula do projeto inicial de serviços.
+Utilizar o Open JDK ao menos na versão 8: [Baixe uma versão aqui](https://adoptopenjdk.net/)
+
+### Maven
+
+* [Maven](https://maven.apache.org/): Sua configuração na máquina só é necessária se for escolhida a IDE Eclipse.
+
+### IDE 
+
+* [Netbeans](https://netbeans.org/): Recomendado por ser *Open Source* e não precisar de configuração adicional.
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/): para estudantes, solicite a licença estudantil [aqui](https://www.jetbrains.com/student/).
+* [Eclipse](https://www.eclipse.org/)
+
+## Conteúdo
+
+Em desenvolvimento...
+
+* [Aula 1](Aula%201): revisão da linguage Java com um exemplo de Lista Encadeada.
