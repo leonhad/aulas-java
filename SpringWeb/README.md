@@ -37,3 +37,5 @@ Em desenvolvimento...
 * [Aula 2](Aula%202): conceitos da arquitetura de microsserviços.
 * [Aula 3](Aula%203): projeto de interfaces.
 * [Aula 4](Aula%204): projeto de interfaces com o usuário.
+* [Aula 5](Aula%205): tela de autenticação com bootstrap.
+* [Aula 5](Aula%205): páginas de cadastro com Spring Boot.
