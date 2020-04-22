@@ -6,6 +6,6 @@ Nesta aula será feita correção do exercício de cadastro de usuário e a expl
 
 ## Diretórios
 
-- **aula5:** arquivos de template usados como base para a aula.
-- **aula5-final:** template com o cadastro de usuário junto com o projeto do Spring Boot.
+- **aula6:** arquivos de template usados como base para a aula.
+- **aula6-final:** template com o cadastro de usuário junto com o projeto do Spring Boot.
 
