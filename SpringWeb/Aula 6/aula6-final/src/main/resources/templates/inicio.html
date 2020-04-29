@@ -1,6 +1,7 @@
 <!--?xml version="1.0" encoding="UTF-8"?-->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org">
 <head id="j_idt2">
     <title>Controle de estoque</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -88,8 +89,7 @@
                                 </p>
                                 <p class="avatar-e">Nome do usuário
                                 </p>
-                                <p class="avatar-d">email@uniceplac.edu.br
-                                </p>
+                                <p class="avatar-d" th:text="${email}"></p>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#">
