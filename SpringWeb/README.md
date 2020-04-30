@@ -38,4 +38,5 @@ Em desenvolvimento...
 * [Aula 3](Aula%203): projeto de interfaces.
 * [Aula 4](Aula%204): projeto de interfaces com o usuário.
 * [Aula 5](Aula%205): tela de autenticação com bootstrap.
-* [Aula 5](Aula%205): páginas de cadastro com Spring Boot.
+* [Aula 6](Aula%206): páginas de cadastro com Spring Boot.
+* [Aula 7](Aula%207): revisão da linguagem Javascript.
