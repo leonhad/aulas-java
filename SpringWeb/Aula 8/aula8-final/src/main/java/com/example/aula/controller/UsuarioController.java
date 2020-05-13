@@ -3,7 +3,11 @@ package com.example.aula.controller;
 import com.example.aula.entity.UsuarioEntity;
 import com.example.aula.repository.UsuarioRepository;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,8 +35,13 @@ public class UsuarioController {
     }
     
     @GetMapping(path = "/{id}")
-    public UsuarioEntity get(@PathVariable Long id) {
-        return usuarioRepository.getOne(id);
+    public ResponseEntity<UsuarioEntity> get(@PathVariable Long id) {
+        Optional<UsuarioEntity> usuario = usuarioRepository.findById(id);
+        if (usuario.isPresent()) {
+            return ResponseEntity.ok(usuario.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
     
     @PutMapping
@@ -41,7 +50,12 @@ public class UsuarioController {
     }
     
     @DeleteMapping(path = "/{id}")
-    public void delete(@PathVariable Long id) {
-        usuarioRepository.deleteById(id);
+    public ResponseEntity<UsuarioEntity> delete(@PathVariable Long id) {
+        try {
+            usuarioRepository.deleteById(id);
+            return ResponseEntity.ok().build();
+        } catch (EmptyResultDataAccessException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
