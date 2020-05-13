@@ -40,3 +40,4 @@ Em desenvolvimento...
 * [Aula 5](Aula%205): tela de autenticação com bootstrap.
 * [Aula 6](Aula%206): páginas de cadastro com Spring Boot.
 * [Aula 7](Aula%207): revisão da linguagem Javascript.
+* [Aula 8](Aula%208): mensagens de erro nos serviços.
