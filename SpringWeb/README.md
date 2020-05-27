@@ -42,3 +42,5 @@ Em desenvolvimento...
 * [Aula 7](Aula%207): revisão da linguagem Javascript.
 * [Aula 8](Aula%208): mensagens de erro nos serviços.
 * [Aula 9](Aula%209): criação de um projeto completo (banco e back-end).
+
+* [Aula 10](Aula%2010): criação de um projeto completo (banco e front-end).
