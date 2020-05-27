@@ -1,7 +1,10 @@
 package com.aula.aula9.entity;
 
+import com.aula.aula9.utils.CpfUtils;
+import com.aula.aula9.utils.DateUtils;
+
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -10,13 +13,14 @@ public class AlunoEntity {
 
     @Id
     @Column(name = "id_aluno")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "nm_aluno")
     private String nome;
 
     @Column(name = "nr_cpf")
-    private Integer cpf;
+    private Long cpf;
 
     @Column(name = "dt_nascimento")
     private Date nascimento;
@@ -53,11 +57,11 @@ public class AlunoEntity {
         this.nome = nmAluno;
     }
 
-    public Integer getCpf() {
+    public Long getCpf() {
         return cpf;
     }
 
-    public void setCpf(Integer nrCpf) {
+    public void setCpf(Long nrCpf) {
         this.cpf = nrCpf;
     }
 
@@ -67,6 +71,16 @@ public class AlunoEntity {
 
     public void setNascimento(Date dtNascimento) {
         this.nascimento = dtNascimento;
+    }
+
+    @Transient
+    public String getData() {
+        return DateUtils.format(nascimento);
+    }
+
+    @Transient
+    public String getCpfFormatado() {
+        return CpfUtils.format(cpf);
     }
 
     @Override

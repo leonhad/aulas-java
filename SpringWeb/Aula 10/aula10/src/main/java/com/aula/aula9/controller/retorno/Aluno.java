@@ -1,30 +1,25 @@
 package com.aula.aula9.controller.retorno;
 
 import com.aula.aula9.entity.AlunoEntity;
+import com.aula.aula9.utils.CpfUtils;
 
 import java.util.Date;
 
 public class Aluno {
     private Integer id;
     private String nome;
-    private Date data;
-    private Date timestamp = new Date();
+    private String cpf;
+    private Date nascimento;
 
     public Aluno() {
+        super();
     }
 
     public Aluno(AlunoEntity entity) {
         this.id = entity.getId();
         this.nome = entity.getNome();
-        this.data = entity.getNascimento();
-    }
-
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
+        this.nascimento = entity.getNascimento();
+        this.cpf = CpfUtils.format(entity.getCpf());
     }
 
     public Integer getId() {
@@ -43,11 +38,19 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public Date getData() {
-        return data;
+    public Date getNascimento() {
+        return nascimento;
     }
 
-    public void setData(Date data) {
-        this.data = data;
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }
