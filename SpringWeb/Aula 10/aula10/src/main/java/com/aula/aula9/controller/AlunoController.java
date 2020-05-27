@@ -29,21 +29,21 @@ public class AlunoController {
         model.addAttribute("alunos", alunos.stream().map(Aluno::new).collect(Collectors.toList()));
         model.addAttribute("nome", nome);
 
-        return "cadastros/pesquisaAluno";
+        return "/cadastros/pesquisaAluno";
     }
 
     @GetMapping("novo")
     public String novo(Model model) {
         model.addAttribute("id", "");
         model.addAttribute("aluno", new AlunoEntity());
-        return "cadastros/cadastroAluno";
+        return "/cadastros/cadastroAluno";
     }
 
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable Integer id, Model model) {
         model.addAttribute("id", id);
         model.addAttribute("aluno", alunoRepository.findById(id).get());
-        return "cadastros/cadastroAluno";
+        return "/cadastros/cadastroAluno";
     }
 
     @GetMapping("/excluir/{id}")

@@ -15,7 +15,7 @@ public class InicioController {
     @PostMapping(value = "/login")
     public String login(@RequestParam String usuario, @RequestParam String senha, Model model) {
         model.addAttribute("email", usuario);
-        return "inicio";
+        return "redirect:/home";
     }
 
     @GetMapping("/home")
