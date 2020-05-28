@@ -49,6 +49,7 @@ public class AlunoController {
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable Integer id, Model model) {
         alunoRepository.deleteById(id);
+        model.addAttribute("mensagem", "Registro excluído com sucesso");
         return pesquisa("", model);
     }
 

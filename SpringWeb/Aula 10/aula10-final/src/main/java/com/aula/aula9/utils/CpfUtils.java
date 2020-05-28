@@ -30,6 +30,6 @@ public final class CpfUtils {
             return null;
         }
 
-        return Long.valueOf(cpf.replaceAll("[\\.\\s-]+", "").trim());
+        return Long.valueOf(cpf.replaceAll("[.\\s-]+", "").trim());
     }
 }

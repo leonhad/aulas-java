@@ -76,31 +76,31 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th scope="col">Nome</th>
-                        <th class="text-center" scope="col">CPF</th>
-                        <th class="text-center" scope="col">Data de Nascimento</th>
-                        <th class="width120" scope="col">Ação</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th class="text-center" scope="col">CPF</th>
+                            <th class="text-center" scope="col">Data de Nascimento</th>
+                            <th class="width120" scope="col">Ação</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="aluno : ${alunos}">
-                        <td th:text="${aluno.nome}"></td>
-                        <td th:text="${aluno.cpf}" class="text-center"></td>
-                        <td th:text="${#dates.format(aluno.nascimento, 'dd/MM/yyyy')}" class="text-center"></td>
-                        <td class="text-center">
-                            <div class="btn-group btn-group-xs" role="group" aria-label="...">
-                                <a th:href="@{'/alunos/editar/' + ${aluno.id}}" title="Editar"
-                                   class="btn btn-default">
-                                    <em class="glyphicon glyphicon-pencil"></em>
-                                </a>
-                                <a th:href="@{'/alunos/excluir/' + ${aluno.id}}" title="Excluir"
-                                   onclick="return confirm('Confirma a exclusão?')" class="btn btn-default">
-                                    <em class="glyphicon glyphicon-trash"></em>
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
+                        <tr th:each="aluno : ${alunos}">
+                            <td th:text="${aluno.nome}"></td>
+                            <td th:text="${aluno.cpf}" class="text-center"></td>
+                            <td th:text="${#dates.format(aluno.nascimento, 'dd/MM/yyyy')}" class="text-center"></td>
+                            <td class="text-center">
+                                <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                    <a th:href="@{'/alunos/editar/' + ${aluno.id}}" title="Editar"
+                                       class="btn btn-default">
+                                        <em class="glyphicon glyphicon-pencil"></em>
+                                    </a>
+                                    <a th:href="@{'/alunos/excluir/' + ${aluno.id}}" title="Excluir"
+                                       onclick="return confirm('Confirma a exclusão?')" class="btn btn-default">
+                                        <em class="glyphicon glyphicon-trash"></em>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

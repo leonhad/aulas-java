@@ -8,4 +8,5 @@ import java.util.List;
 public interface AlunoRepository extends JpaRepository<AlunoEntity, Integer> {
 
     public List<AlunoEntity> findByNomeIgnoreCaseContaining(String nome);
+
 }

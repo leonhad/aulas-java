@@ -9,6 +9,7 @@ public class CursoEntity {
 
     @Id
     @Column(name = "id_curso")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "nm_curso", nullable = false, length = 100)

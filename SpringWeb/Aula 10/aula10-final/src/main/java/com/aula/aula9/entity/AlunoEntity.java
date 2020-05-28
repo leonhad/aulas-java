@@ -25,22 +25,6 @@ public class AlunoEntity {
     @Column(name = "dt_nascimento")
     private Date nascimento;
 
-    @ManyToMany
-    @JoinTable(
-            name = "aluno_disciplina",
-            joinColumns = @JoinColumn(name = "id_aluno"),
-            inverseJoinColumns = @JoinColumn(name = "id_disciplina")
-    )
-    private List<DisciplinaEntity> disciplinas;
-
-    public List<DisciplinaEntity> getDisciplinas() {
-        return disciplinas;
-    }
-
-    public void setDisciplinas(List<DisciplinaEntity> disciplinas) {
-        this.disciplinas = disciplinas;
-    }
-
     public Integer getId() {
         return id;
     }
