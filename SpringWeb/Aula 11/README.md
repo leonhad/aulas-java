@@ -6,7 +6,6 @@ Esta aula visa a revisão da criação de um projeto completo com o início na c
 
 ## Diretórios
 
-- **aula11:** arquivos de template usados como base para a aula (gerado no Spring Initializr).
-- **aula11-final:** projeto do front-end.
-- **aula11-h2:** versão do projeto com o banco em memória (H2).
+- **aula11:** arquivos de template usados como base para a aula.
+- **aula11-final:** projeto com a revisão das mensagens de erro em sistemas web.
 
