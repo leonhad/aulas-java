@@ -63,10 +63,19 @@
             <label for="curso" class="control-label col-sm-2">Curso:</label>
             <div class="col-sm-10">
                 <select name="curso" id="curso" th:required="true" class="form-control"
-                        onchange="alteraCurso(this.value)">
+                        onchange="alteraCurso(this.value)" onblur="">
                     <option value="0">Selecione...</option>
-                    <option th:value="${c.id}" th:text="${c.nome}" th:each="c : ${cursos}"
+                    <option th:value="${c.id}" th:text="${c.nome}"
+                            th:each="c : ${cursos}"
                             th:selected="${c.id == curso}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="disciplina" class="control-label col-sm-2">Disciplina:</label>
+            <div class="col-sm-10">
+                <select id="disciplina" name="discicplina" class="form-control">
+                    <option>Selecione...</option>
                 </select>
             </div>
         </div>
@@ -116,13 +125,16 @@
     </div>
     <script type="text/javascript">
         function alteraCurso(valor) {
+            $('#disciplina').empty();
             $.ajax({
                 url: "/rest/disciplinas/" + valor,
                 success: function (d) {
+                    let opcoes = "<option value=\"0\">Selecione...</option>";
                     for (let i = 0; i < d.length; i++) {
-                        console.log(d[i].id);
-                        console.log(d[i].nome);
+                        opcoes += "<option value='" + d[i].id +
+                                "'>" + d[i].nome + "</option>";
                     }
+                    $("#disciplina").html(opcoes);
                 },
                 error: function (xhr) {
                     if (xhr.status === 404) {

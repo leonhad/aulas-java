@@ -80,10 +80,6 @@ public class AlunoController {
                 throw new AvisoException("O campo CPF é obrigatório.");
             }
 
-            if (true) {
-                throw new GeralException("Teste com alunos");
-            }
-
             alunoRepository.save(alunoEntity);
 
             model.addAttribute("mensagem", "Registro alterado com sucesso");
