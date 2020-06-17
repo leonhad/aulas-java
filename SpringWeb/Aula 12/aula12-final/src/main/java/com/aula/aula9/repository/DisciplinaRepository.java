@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface DisciplinaRepository extends JpaRepository<DisciplinaEntity, Integer> {
     List<DisciplinaEntity> findByNomeIgnoreCaseContainingAndCurso(String nome, CursoEntity curso);
+
+    List<DisciplinaEntity> findByCurso(CursoEntity curso);
 }
