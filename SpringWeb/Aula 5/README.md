@@ -3,9 +3,3 @@
 ## Tela de autenticação
 
 Nesta aula será feita correção do exercício de cadastro de produto, uma explicação do menu do sistema e da criação da tela de login.
-
-## Diretórios
-
-- **aula5:** arquivos de template usados como base para a aula.
-- **aula5-final:** template com o cadastro de produto e a tela de autenticação.
-

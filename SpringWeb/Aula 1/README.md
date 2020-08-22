@@ -14,8 +14,3 @@ Entrar no site do [Spring Initializr](https://start.spring.io/) e gerar um novo 
   * Spring Web.
   * Spring Data JPA.
   * H2 Database.
-
-## Diretórios
-
-* **aula1:** projeto gerado no Spring Initializr sem alterações.
-* **aula1-final:** projeto após a aula do projeto inicial de serviços.
