@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.example</groupId>
+	<artifactId>spring-web</artifactId>
+	<version>1.0.0</version>
+	<name>Aulas de Spring Web</name>
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>Aula 1</module>
+		<module>Aula 2</module>
+		<module>Aula 3</module>
+		<module>Aula 6</module>
+		<module>Aula 7</module>
+		<module>Aula 8</module>
+		<module>Aula 9</module>
+		<module>Aula 10</module>
+		<module>Aula 11</module>
+		<module>Aula 12</module>
+	</modules>
+</project>
