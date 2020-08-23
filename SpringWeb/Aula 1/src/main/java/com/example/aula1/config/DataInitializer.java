@@ -2,7 +2,6 @@ package com.example.aula1.config;
 
 import com.example.aula1.entity.UsuarioEntity;
 import com.example.aula1.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
