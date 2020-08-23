@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.aula</groupId>
     <artifactId>spring-aula11</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>SpringWeb - Aula 11</name>
     <description>Aula 11</description>
 

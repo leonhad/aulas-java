@@ -4,9 +4,9 @@ import com.aula.aula12.entity.CursoEntity;
 import com.aula.aula12.entity.DisciplinaEntity;
 import com.aula.aula12.repository.CursoRepository;
 import com.aula.aula12.repository.DisciplinaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,13 +16,16 @@ import java.util.List;
 @RequestMapping("/disciplinas")
 public class DisciplinaController {
 
-    @Autowired
-    private DisciplinaRepository disciplinaRepository;
+    private final DisciplinaRepository disciplinaRepository;
 
-    @Autowired
-    private CursoRepository cursoRepository;
+    private final CursoRepository cursoRepository;
 
-    @RequestMapping("pesquisa")
+    public DisciplinaController(DisciplinaRepository disciplinaRepository, CursoRepository cursoRepository) {
+        this.disciplinaRepository = disciplinaRepository;
+        this.cursoRepository = cursoRepository;
+    }
+
+    @GetMapping("pesquisa")
     public String pesquisa(@RequestParam(required = false, defaultValue = "") String nome,
                            @RequestParam(required = false, defaultValue = "0") Integer curso,
                            Model model) {
