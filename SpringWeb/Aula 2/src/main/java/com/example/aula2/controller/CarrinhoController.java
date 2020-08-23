@@ -24,7 +24,7 @@ public class CarrinhoController {
 
     @PostMapping
     public Carrinho create(@RequestBody Carrinho carrinho) {
-        return new Carrinho(carrinhoRepository.save(carrinho.getEntity()));
+        return new Carrinho(carrinhoRepository.save(carrinho.toEntity()));
     }
 
     @GetMapping(path = "/{id}")
@@ -34,7 +34,7 @@ public class CarrinhoController {
 
     @PutMapping
     public Carrinho update(@RequestBody Carrinho carrinho) {
-        return new Carrinho(carrinhoRepository.save(carrinho.getEntity()));
+        return new Carrinho(carrinhoRepository.save(carrinho.toEntity()));
     }
 
     @DeleteMapping(path = "/{id}")

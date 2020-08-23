@@ -1,6 +1,6 @@
-package com.example.aula1.pojo;
+package com.example.aula3.pojo;
 
-import com.example.aula1.entity.UsuarioEntity;
+import com.example.aula3.entity.UsuarioEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

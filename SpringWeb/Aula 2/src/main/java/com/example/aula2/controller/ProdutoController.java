@@ -24,7 +24,7 @@ public class ProdutoController {
 
     @PostMapping
     public Produto create(@RequestBody Produto produto) {
-        return new Produto(produtoRepository.save(produto.getEntity()));
+        return new Produto(produtoRepository.save(produto.toEntity()));
     }
 
     @GetMapping(path = "/{id}")
@@ -34,7 +34,7 @@ public class ProdutoController {
 
     @PutMapping
     public Produto update(@RequestBody Produto produto) {
-        return new Produto(produtoRepository.save(produto.getEntity()));
+        return new Produto(produtoRepository.save(produto.toEntity()));
     }
 
     @DeleteMapping(path = "/{id}")

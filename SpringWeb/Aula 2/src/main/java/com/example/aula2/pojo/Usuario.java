@@ -25,7 +25,7 @@ public class Usuario implements Serializable {
     }
 
     @JsonIgnore
-    public UsuarioEntity getEntity() {
+    public UsuarioEntity toEntity() {
         UsuarioEntity entity = new UsuarioEntity();
         entity.setId(this.id);
         entity.setNome(this.nome);

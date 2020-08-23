@@ -1,6 +1,6 @@
-package com.example.aula2.pojo;
+package com.example.aula3.pojo;
 
-import com.example.aula2.entity.ProdutoEntity;
+import com.example.aula3.entity.ProdutoEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Produto {
@@ -8,7 +8,7 @@ public class Produto {
 
     private String nome;
 
-    private String categoria;
+    private Categoria categoria;
 
     private Double valor;
 
@@ -18,7 +18,7 @@ public class Produto {
 
     public Produto(ProdutoEntity produto) {
         this.id = produto.getId();
-        this.categoria = produto.getCategoria();
+        this.categoria = new Categoria(produto.getCategoria());
         this.valor = produto.getValor();
     }
 
@@ -27,7 +27,7 @@ public class Produto {
         ProdutoEntity entity = new ProdutoEntity();
         entity.setId(id);
         entity.setNome(nome);
-        entity.setCategoria(categoria);
+        entity.setCategoria(categoria.toEntity());
         entity.setValor(valor);
         return entity;
     }
@@ -48,11 +48,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public String getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 

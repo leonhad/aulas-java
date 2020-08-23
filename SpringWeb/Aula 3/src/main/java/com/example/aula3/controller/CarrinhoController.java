@@ -1,43 +1,40 @@
 package com.example.aula3.controller;
 
-import com.example.aula3.entity.CarrinhoEntity;
+import com.example.aula3.pojo.Carrinho;
 import com.example.aula3.repository.CarrinhoRepository;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/carrinhos")
 public class CarrinhoController {
 
-    @Autowired
-    private CarrinhoRepository carrinhoRepository;
+    private final CarrinhoRepository carrinhoRepository;
+
+    public CarrinhoController(CarrinhoRepository carrinhoRepository) {
+        this.carrinhoRepository = carrinhoRepository;
+    }
 
     @GetMapping
-    public List<CarrinhoEntity> listAll() {
-        return carrinhoRepository.findAll();
+    public List<Carrinho> listAll() {
+        return carrinhoRepository.findAll().stream().map(Carrinho::new).collect(Collectors.toList());
     }
-    
+
     @PostMapping
-    public CarrinhoEntity create(@RequestBody CarrinhoEntity produto) {
-        return carrinhoRepository.save(produto);
+    public Carrinho create(@RequestBody Carrinho carrinho) {
+        return new Carrinho(carrinhoRepository.save(carrinho.toEntity()));
     }
 
     @GetMapping(path = "/{id}")
-    public CarrinhoEntity get(@PathVariable Long id) {
-        return carrinhoRepository.getOne(id);
+    public Carrinho get(@PathVariable Long id) {
+        return new Carrinho(carrinhoRepository.getOne(id));
     }
 
     @PutMapping
-    public CarrinhoEntity update(@RequestBody CarrinhoEntity produto) {
-        return carrinhoRepository.save(produto);
+    public Carrinho update(@RequestBody Carrinho carrinho) {
+        return new Carrinho(carrinhoRepository.save(carrinho.toEntity()));
     }
 
     @DeleteMapping(path = "/{id}")

@@ -1,6 +1,6 @@
-package com.example.aula2.pojo;
+package com.example.aula3.pojo;
 
-import com.example.aula2.entity.CarrinhoEntity;
+import com.example.aula3.entity.CarrinhoEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;

@@ -24,7 +24,7 @@ public class UsuarioController {
 
     @PostMapping
     public Usuario create(@RequestBody Usuario usuario) {
-        return new Usuario(usuarioRepository.save(usuario.getEntity()));
+        return new Usuario(usuarioRepository.save(usuario.toEntity()));
     }
 
     @GetMapping(path = "/{id}")
@@ -34,7 +34,7 @@ public class UsuarioController {
 
     @PutMapping
     public Usuario update(@RequestBody Usuario usuario) {
-        return new Usuario(usuarioRepository.save(usuario.getEntity()));
+        return new Usuario(usuarioRepository.save(usuario.toEntity()));
     }
 
     @DeleteMapping(path = "/{id}")
