@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
+        <version>2.3.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>aula2</artifactId>
+    <artifactId>spring-aula2</artifactId>
     <version>1.0.0</version>
-    <name>Aula 2</name>
+    <name>SpringWeb - Aula 2</name>
     <description>Aula de microsserviços</description>
 
     <properties>
