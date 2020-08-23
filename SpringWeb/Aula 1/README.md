@@ -6,7 +6,7 @@ Entrar no site do [Spring Initializr](https://start.spring.io/) e gerar um novo 
 
 * **Project:** Maven
 * **Language:** Java
-* **Spring Boot:** 2.2.4
+* **Spring Boot:** 2.3.3
 * **Project Metadata:**
   * **Group:** com.example
   * **Artifact:** aula1
