@@ -5,7 +5,6 @@ import com.aula.aula10.entity.AlunoEntity;
 import com.aula.aula10.repository.AlunoRepository;
 import com.aula.aula10.utils.CpfUtils;
 import com.aula.aula10.utils.DateUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,10 +16,15 @@ import java.util.stream.Collectors;
 @RequestMapping("/alunos")
 public class AlunoController {
 
-    @Autowired
-    private AlunoRepository alunoRepository;
+    public static final String MENSAGEM = "mensagem";
 
-    @RequestMapping("pesquisa")
+    private final AlunoRepository alunoRepository;
+
+    public AlunoController(AlunoRepository alunoRepository) {
+        this.alunoRepository = alunoRepository;
+    }
+
+    @GetMapping("pesquisa")
     public String pesquisa(@RequestParam(required = false, defaultValue = "") String nome, Model model) {
         List<AlunoEntity> alunos = alunoRepository.findByNomeIgnoreCaseContaining(nome);
 
@@ -40,14 +44,14 @@ public class AlunoController {
     @GetMapping("/editar/{id}")
     public String editar(@PathVariable Integer id, Model model) {
         model.addAttribute("id", id);
-        model.addAttribute("aluno", alunoRepository.findById(id).get());
+        model.addAttribute("aluno", alunoRepository.findById(id).orElse(null));
         return "/cadastros/cadastroAluno";
     }
 
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable Integer id, Model model) {
         alunoRepository.deleteById(id);
-        model.addAttribute("mensagem", "Registro excluído com sucesso");
+        model.addAttribute(MENSAGEM, "Registro excluído com sucesso");
         return pesquisa("", model);
     }
 
@@ -59,7 +63,7 @@ public class AlunoController {
         alunoEntity.setNascimento(DateUtils.parse(data));
         alunoRepository.save(alunoEntity);
 
-        model.addAttribute("mensagem", "Registro incluído com sucesso");
+        model.addAttribute(MENSAGEM, "Registro incluído com sucesso");
 
         return pesquisa(nome, model);
     }
@@ -74,7 +78,7 @@ public class AlunoController {
         alunoEntity.setNascimento(DateUtils.parse(data));
         alunoRepository.save(alunoEntity);
 
-        model.addAttribute("mensagem", "Registro alterado com sucesso");
+        model.addAttribute(MENSAGEM, "Registro alterado com sucesso");
 
         return pesquisa(nome, model);
     }

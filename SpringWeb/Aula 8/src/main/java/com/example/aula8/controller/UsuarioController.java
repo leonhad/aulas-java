@@ -1,6 +1,5 @@
 package com.example.aula8.controller;
 
-import com.example.aula8.entity.UsuarioEntity;
 import com.example.aula8.pojo.Usuario;
 import com.example.aula8.repository.UsuarioRepository;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -21,8 +21,8 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public List<UsuarioEntity> listAll() {
-        return usuarioRepository.findAll();
+    public List<Usuario> listAll() {
+        return usuarioRepository.findAll().stream().map(Usuario::new).collect(Collectors.toList());
     }
 
     @PostMapping
