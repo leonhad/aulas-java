@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class InicioController {
 
     @RequestMapping("/")
-    public String inicio(Model model){
+    public String inicio(Model model) {
         model.addAttribute("title", "Hello World!");
         return "index";
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String usuario, @RequestParam String senha, Model model){
+    public String login(@RequestParam String usuario, @RequestParam String senha, Model model) {
         model.addAttribute("email", usuario);
         return "inicio";
     }

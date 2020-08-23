@@ -1,45 +1,42 @@
 package com.example.aula6.controller;
 
-import com.example.aula6.entity.ProdutoEntity;
+import com.example.aula6.pojo.Produto;
 import com.example.aula6.repository.ProdutoRepository;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
-    
-    @Autowired
-    private ProdutoRepository produtoRepository;
-    
+
+    private final ProdutoRepository produtoRepository;
+
+    public ProdutoController(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
+    }
+
     @GetMapping
-    public List<ProdutoEntity> listAll() {
-        return produtoRepository.findAll();
+    public List<Produto> listAll() {
+        return produtoRepository.findAll().stream().map(Produto::new).collect(Collectors.toList());
     }
-    
+
     @PostMapping
-    public ProdutoEntity create(@RequestBody ProdutoEntity produto) {
-        return produtoRepository.save(produto);
+    public Produto create(@RequestBody Produto produto) {
+        return new Produto(produtoRepository.save(produto.toEntity()));
     }
-    
+
     @GetMapping(path = "/{id}")
-    public ProdutoEntity get(@PathVariable Long id) {
-        return produtoRepository.getOne(id);
+    public Produto get(@PathVariable Long id) {
+        return new Produto(produtoRepository.getOne(id));
     }
-    
+
     @PutMapping
-    public ProdutoEntity update(@RequestBody ProdutoEntity produto) {
-        return produtoRepository.save(produto);
+    public Produto update(@RequestBody Produto produto) {
+        return new Produto(produtoRepository.save(produto.toEntity()));
     }
-    
+
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         produtoRepository.deleteById(id);
