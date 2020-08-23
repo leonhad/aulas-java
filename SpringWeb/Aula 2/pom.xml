@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>spring-aula2</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>SpringWeb - Aula 2</name>
     <description>Aula de microsserviços</description>
 
