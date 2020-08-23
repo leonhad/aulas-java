@@ -31,8 +31,8 @@ public class UsuarioController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<UsuarioEntity> get(@PathVariable Long id) {
-        Optional<UsuarioEntity> usuario = usuarioRepository.findById(id);
+    public ResponseEntity<Usuario> get(@PathVariable Long id) {
+        Optional<Usuario> usuario = usuarioRepository.findById(id).map(Usuario::new);
         return usuario.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -42,7 +42,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<UsuarioEntity> delete(@PathVariable Long id) {
+    public ResponseEntity<Usuario> delete(@PathVariable Long id) {
         try {
             usuarioRepository.deleteById(id);
             return ResponseEntity.ok().build();
