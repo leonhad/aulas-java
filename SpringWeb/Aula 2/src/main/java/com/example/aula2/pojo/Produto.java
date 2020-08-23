@@ -1,15 +1,9 @@
-package com.example.aula2.entity;
+package com.example.aula2.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.example.aula2.entity.ProdutoEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity
-public class ProdutoEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Produto {
     private Long id;
 
     private String nome;
@@ -18,8 +12,24 @@ public class ProdutoEntity {
 
     private Double valor;
 
-    public ProdutoEntity() {
+    public Produto() {
         super();
+    }
+
+    public Produto(ProdutoEntity produto) {
+        this.id = produto.getId();
+        this.categoria = produto.getCategoria();
+        this.valor = produto.getValor();
+    }
+
+    @JsonIgnore
+    public ProdutoEntity getEntity() {
+        ProdutoEntity entity = new ProdutoEntity();
+        entity.setId(id);
+        entity.setNome(nome);
+        entity.setCategoria(categoria);
+        entity.setValor(valor);
+        return entity;
     }
 
     public Long getId() {

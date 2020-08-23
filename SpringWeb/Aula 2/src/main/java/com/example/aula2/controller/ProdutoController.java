@@ -1,10 +1,11 @@
 package com.example.aula2.controller;
 
-import com.example.aula2.entity.ProdutoEntity;
+import com.example.aula2.pojo.Produto;
 import com.example.aula2.repository.ProdutoRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/produtos")
@@ -17,23 +18,23 @@ public class ProdutoController {
     }
 
     @GetMapping
-    public List<ProdutoEntity> listAll() {
-        return produtoRepository.findAll();
+    public List<Produto> listAll() {
+        return produtoRepository.findAll().stream().map(Produto::new).collect(Collectors.toList());
     }
 
     @PostMapping
-    public ProdutoEntity create(@RequestBody ProdutoEntity produto) {
-        return produtoRepository.save(produto);
+    public Produto create(@RequestBody Produto produto) {
+        return new Produto(produtoRepository.save(produto.getEntity()));
     }
 
     @GetMapping(path = "/{id}")
-    public ProdutoEntity get(@PathVariable Long id) {
-        return produtoRepository.getOne(id);
+    public Produto get(@PathVariable Long id) {
+        return new Produto(produtoRepository.getOne(id));
     }
 
     @PutMapping
-    public ProdutoEntity update(@RequestBody ProdutoEntity produto) {
-        return produtoRepository.save(produto);
+    public Produto update(@RequestBody Produto produto) {
+        return new Produto(produtoRepository.save(produto.getEntity()));
     }
 
     @DeleteMapping(path = "/{id}")
