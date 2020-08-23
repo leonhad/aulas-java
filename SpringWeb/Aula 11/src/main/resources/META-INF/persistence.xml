@@ -5,8 +5,8 @@
 
     <persistence-unit name="Aula9-PU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.aula.aula9.entity.AlunoEntity</class>
-        <class>com.aula.aula9.entity.CursoEntity</class>
-        <class>com.aula.aula9.entity.DisciplinaEntity</class>
+        <class>com.aula.aula11.entity.AlunoEntity</class>
+        <class>com.aula.aula11.entity.CursoEntity</class>
+        <class>com.aula.aula11.entity.DisciplinaEntity</class>
     </persistence-unit>
 </persistence>

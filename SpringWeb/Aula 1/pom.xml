@@ -8,8 +8,8 @@
 		<version>2.2.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>aula1</artifactId>
+	<groupId>com.spring</groupId>
+	<artifactId>spring-aula1</artifactId>
 	<version>1.0.0</version>
 	<name>Aula 1</name>
 	<description>Projeto inicial com Spring Boot</description>

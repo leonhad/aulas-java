@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.eda</groupId>
-	<artifactId>aula1</artifactId>
+	<artifactId>eda-aula1</artifactId>
 	<version>1.0.0</version>
-	<name>Aula 1</name>
+	<name>EDA - Aula 1</name>
 	<description>Arquivos de aula</description>
 
 	<properties>
