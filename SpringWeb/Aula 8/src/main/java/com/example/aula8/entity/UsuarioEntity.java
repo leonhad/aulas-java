@@ -1,18 +1,15 @@
 package com.example.aula8.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class UsuarioEntity implements Serializable {
+public class UsuarioEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
@@ -22,10 +19,8 @@ public class UsuarioEntity implements Serializable {
     public UsuarioEntity() {
         super();
     }
-    
+
     public UsuarioEntity(String nome, String senha) {
-        this();
-        
         this.nome = nome;
         this.senha = senha;
     }
